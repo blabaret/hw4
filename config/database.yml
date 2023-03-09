@@ -26,3 +26,4 @@ production:
   database: entr451-hw4-dennisyue_production
   username: entr451-hw4-dennisyue
   password: <%= ENV["ENTR451-HW4-DENNISYUE_DATABASE_PASSWORD"] %>
+  
