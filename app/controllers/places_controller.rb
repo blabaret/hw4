@@ -7,6 +7,8 @@ class PlacesController < ApplicationController
   def show
     @place = Place.find_by({ "id" => params["id"] })
     @posts = Post.where({ "place_id" => @place["id"] })
+    @user = User.find_by({ "email" => params["email"] })
+    @sessionid = session["user_id"]
   end
 
   def new
@@ -17,6 +19,7 @@ class PlacesController < ApplicationController
     if @current_user
       @place = Place.new
       @place["name"] = params["place"]["name"]
+      @place["user_id"] = params["user"]["id"]
       @place.save
     else
       flash["notice"] = "Please login first."

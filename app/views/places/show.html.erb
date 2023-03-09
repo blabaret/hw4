@@ -1,10 +1,11 @@
-<h1><%= @place["name"] %></h1>
+<h1>My <%= @place["name"] %> Posts</h1>
 
-<h2>My Posts</h2>
 <% for post in @posts %>
-  <h3><%= post["title"] %></h3>
-  <h4><%= post["posted_on"] %></h4>
-  <p><%= post["description"] %></p>
+    <% if @sessionid == @place["user_id"] %>
+      <h3><%= post["title"] %></h3>
+      <h4><%= post["posted_on"] %></h4>
+      <p><%= post["description"] %></p>
+    <% end %>
 <% end %>
 
 <p>
