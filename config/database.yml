@@ -23,7 +23,7 @@ test:
 production:
   <<: *default
   adapter: postgresql
-  database: entr451-hw4-dennisyue_production
-  username: entr451-hw4-dennisyue
-  password: <%= ENV["ENTR451_HW4_DENNISYUE_DATABASE_PASSWORD"] %>
+  database: entr451-hw4_production
+  username: entr451-hw4
+  password: <%= ENV["ENTR451-HW4_DATABASE_PASSWORD"] %>
 
