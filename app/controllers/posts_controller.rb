@@ -8,12 +8,12 @@ class PostsController < ApplicationController
   def create
     if @current_user
       @post = Post.new
-      @user = 
       @post["title"] = params["post"]["title"]
       @post["description"] = params["post"]["description"]
       @post["posted_on"] = params["post"]["posted_on"]
       @post["place_id"] = params["post"]["place_id"]
-      @post["user_id"] = params["user"]["id"]
+      @post["user_id"] = @current_user["id"]
+      @post.uploaded_image.attach(params["post"]["uploaded_image"])
       @post.save
     else
       flash["notice"] = "Please login first."
