@@ -19,7 +19,6 @@ class PlacesController < ApplicationController
     if @current_user
       @place = Place.new
       @place["name"] = params["place"]["name"]
-      @place["user_id"] = params["user"]["id"]
       @place.save
     else
       flash["notice"] = "Please login first."
